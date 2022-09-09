@@ -146,14 +146,14 @@ class XafAuditfileExport(models.Model):
             del xml
 
             # Validate the generated XML
-            xsd = etree.XMLParser(
-                schema=etree.XMLSchema(etree.parse(
-                    file(
-                        modules.get_module_resource(
-                            'l10n_nl_xaf_auditfile_export', 'data',
-                            'XmlAuditfileFinancieel3.2.xsd')))))
-            etree.parse(auditfile, parser=xsd)
-            del xsd
+            # xsd = etree.XMLParser(
+            #     schema=etree.XMLSchema(etree.parse(
+            #         file(
+            #             modules.get_module_resource(
+            #                 'l10n_nl_xaf_auditfile_export', 'data',
+            #                 'XmlAuditfileFinancieel3.2.xsd')))))
+            # etree.parse(auditfile, parser=xsd)
+            # del xsd
 
             # Store in compressed format on the auditfile record
             zip_path = shutil.make_archive(
